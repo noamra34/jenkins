@@ -1,0 +1,11 @@
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: jenkins-agent-pod
+spec:
+  containers:
+  - name: ez-docker-helm-build
+    image: ez-docker-helm-build
+    imagePullPolicy: Always
+    securityContext:
+      privileged: true

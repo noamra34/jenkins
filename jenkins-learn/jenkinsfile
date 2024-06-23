@@ -1,0 +1,18 @@
+pipeline{
+    agent {
+        kubernetes{
+            yamlfile "build-pod.yaml"
+            defaultcontainer "ez-docker-helm-build"
+        }
+    }
+    stages {
+        stage("build") {
+            when {
+                branch "main" 
+            }
+            step {
+                sh "echo 'Hello World'"
+            }
+        }
+    }   
+}
